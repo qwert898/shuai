@@ -135,34 +135,34 @@ namespace ConsoleApp1
 
 
 
-            //int money = 1000647;
-            //string str = money.ToString();
-            //string result = "";
-            //string[] arr = ["零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖"];
-            //string[] units = ["", "拾", "佰", "仟", "萬", "拾", "佰", "仟", "亿"];
-            //for (int i = str.Length - 1; i >= 0; i--) 
-            //{
+            int money = 1000647;
+            string str = money.ToString();
+            string result = "";
+            string[] arr = ["零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖"];
+            string[] units = ["", "拾", "佰", "仟", "萬", "拾", "佰", "仟", "亿"];
+            for (int i = str.Length - 1; i >= 0; i--)
+            {
 
-            //    int idx = int.Parse(str[i].ToString());
-            //    int index = str.Length - 1 - i;
-            //    if (idx != 0 || units[index] == "萬")
-            //    {
-            //        result = arr[idx] + units[index] + result;
-            //    }
-            //    else
-            //    { 
-            //        result = arr[idx] + result;
-            //    }
+                int idx = int.Parse(str[i].ToString());
+                int index = str.Length - 1 - i;
+                if (idx != 0 || units[index] == "萬")
+                {
+                    result = arr[idx] + units[index] + result;
+                }
+                else
+                {
+                    result = arr[idx] + result;
+                }
 
-            //}
+            }
 
-            //result = Regex.Replace(result, @"零+萬", "萬");
-            //result = Regex.Replace(result, @"零+", "零");          
-            //if (result.EndsWith("零"))
-            //{
-            //    result = result.Substring(0, result.Length - 1);
-            //}
-            //Console.WriteLine(result);
+            result = Regex.Replace(result, @"零+萬", "萬");
+            result = Regex.Replace(result, @"零+", "零");
+            if (result.EndsWith("零"))
+            {
+                result = result.Substring(0, result.Length - 1);
+            }
+            Console.WriteLine(result);
 
 
 
@@ -206,10 +206,10 @@ namespace ConsoleApp1
 
             // 反序列化的应用：
             // 将unicode编码汉字转成中文汉字
-            string source = "\\u6C11\\u8C23\\u6D41\\u884C";
-            string s = $"\"{source}\"";  
-            var r1 = JsonSerializer.Deserialize<string>(s);
-            Console.WriteLine(r1);  
+            //string source = "\\u6C11\\u8C23\\u6D41\\u884C";
+            //string s = $"\"{source}\"";  
+            //var r1 = JsonSerializer.Deserialize<string>(s);
+            //Console.WriteLine(r1);  
 
 
 
